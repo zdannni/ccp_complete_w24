@@ -1,0 +1,107 @@
+body {background-color: #9ac450;}
+nav {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    background-color: lightyellow;
+}
+nav ul{
+    margin: 0;
+}
+nav ul li{
+
+    text-align: center;
+}
+
+
+
+h1 {font-size: 30px; font-family:Arial, Helvetica, sans-serif;text-align:center;}
+h2 {font-size: 24px; font-family: Arial, Helvetica, sans-serif; color:#0C270C;}
+h3 {font-size: 20px; font-family: Arial, Helvetica, sans-serif;color:#2C442C;}
+p {line-height: 1.6;}
+image {border-style: solid; border-width: 5px; padding: 10px; margin: 20px; border-top-right-radius: 30px; width: 100%;height:100%;}
+ul {list-style-position: inside; margin-left: 50px;}
+a:hover {background-color: yellow;}
+.skip {
+    position:absolute;
+    left:-9999px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    z-index:-1;
+}
+.skip:focus {
+    position:static;
+    width:auto;
+    height:auto;
+    overflow:visible;
+    z-index:1;
+}
+
+.active {
+    background-color: yellow;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.grid ul{
+    grid-column: 1 / -1;
+}
+
+@media screen and (min-width:768px){
+    nav ul{
+        display:flex;
+        justify-content: space-between;
+    }
+    .grid ul{
+        grid-column: 3/4;
+    }
+    a{
+        transition: background-color 0.5s ease;
+    }
+    a:active{
+        background-color: #0C270C;
+    }
+
+    }
+
+@media screen and (min-width:1024px){
+    nav ul{
+        justify-content: space-around;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #333;
+        display: inline-block;
+        position: relative;
+        padding: 5px 0;
+        transition: color 0.3s ease-in-out;
+    }
+
+    nav a::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #009578;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    nav a:hover::before {
+        visibility: visible;
+        width: 100%;
+    }
+
+    nav a:hover {
+        color: #009578;
+    }
+
+}
